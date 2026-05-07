@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VakdetiKade Creations – Pottery Café, Hadapsar Pune</title>
+<meta name="description" content="VakdetiKade Creations – A unique pottery café in Hadapsar, Pune. Handcrafted ceramics, artisan beverages, 3D customization and café experiences.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --clay: #C1440E;
+    --terracotta: #E8623A;
+    --saffron: #F4A01C;
+    --cream: #FFF8F0;
+    --warm-white: #FFFDF9;
+    --forest: #2D5016;
+    --olive: #5C7A2A;
+    --charcoal: #2C2218;
+    --sand: #D4B896;
+    --dusty-rose: #E8A87C;
+    --deep-brown: #4A2C0A;
+    --teal: #1A7A6E;
+    --gold: #D4AF37;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Nunito',sans-serif;
+    background:var(--warm-white);
+    color:var(--charcoal);
+    overflow-x:hidden;
+  }
+
+  /* ===== NAV ===== */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    background:rgba(44,34,24,0.95);
+    backdrop-filter:blur(10px);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 2rem;height:70px;
+    border-bottom:2px solid var(--saffron);
+  }
+  .logo{
+    font-family:'Dancing Script',cursive;
+    font-size:1.8rem;color:var(--saffron);
+    text-shadow:0 0 20px rgba(244,160,28,0.4);
+  }
+  .logo span{color:var(--terracotta);}
+  .nav-links{display:flex;gap:1.5rem;list-style:none;}
+  .nav-links a{
+    color:#fff;text-decoration:none;
+    font-weight:600;font-size:0.88rem;letter-spacing:0.05em;
+    transition:color 0.3s;text-transform:uppercase;
+  }
+  .nav-links a:hover{color:var(--saffron);}
+  .nav-cta{
+    background:linear-gradient(135deg,var(--clay),var(--terracotta));
+    color:#fff!important;padding:0.5rem 1.2rem;
+    border-radius:25px;border:none;cursor:pointer;
+    font-weight:700;font-size:0.85rem;
+    box-shadow:0 4px 15px rgba(193,68,14,0.4);
+    transition:transform 0.2s,box-shadow 0.2s;
+    display:inline-block;text-decoration:none;
+  }
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(193,68,14,0.6);}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+  .hamburger span{width:25px;height:3px;background:#fff;border-radius:2px;transition:0.3s;}
+
+  /* ===== HERO ===== */
+  #hero{
+    min-height:100vh;
+    background: linear-gradient(135deg,#2C1A08 0%,#4A2C0A 40%,#8B4513 70%,#C1440E 100%);
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;position:relative;overflow:hidden;
+    padding:100px 2rem 4rem;
+  }
+  .hero-bg-art{
+    position:absolute;inset:0;
+    background-image:radial-gradient(ellipse at 20% 30%,rgba(244,160,28,0.15) 0%,transparent 50%),
+      radial-gradient(ellipse at 80% 70%,rgba(232,98,58,0.15) 0%,transparent 50%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .floating-pots{position:absolute;inset:0;pointer-events:none;}
+  .pot{
+    position:absolute;font-size:3rem;opacity:0.08;
+    animation:float 6s ease-in-out infinite;
+  }
+  .pot:nth-child(1){top:10%;left:5%;animation-delay:0s;}
+  .pot:nth-child(2){top:20%;right:8%;animation-delay:1.5s;}
+  .pot:nth-child(3){bottom:20%;left:10%;animation-delay:3s;}
+  .pot:nth-child(4){bottom:15%;right:5%;animation-delay:4.5s;}
+  .pot:nth-child(5){top:50%;left:2%;animation-delay:2s;}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(-5deg);}50%{transform:translateY(-20px) rotate(5deg);}}
+  .hero-content{position:relative;z-index:2;max-width:800px;}
+  .hero-badge{
+    display:inline-block;
+    background:rgba(244,160,28,0.2);
+    border:1px solid var(--saffron);
+    color:var(--saffron);
+    padding:0.4rem 1.2rem;border-radius:20px;
+    font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;
+    margin-bottom:1.5rem;font-weight:700;
+  }
+  .hero-title{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(2.8rem,7vw,5.5rem);
+    color:#fff;line-height:1.1;
+    margin-bottom:0.5rem;
+  }
+  .hero-title .accent{color:var(--saffron);}
+  .hero-subtitle{
+    font-family:'Dancing Script',cursive;
+    font-size:clamp(1.4rem,3.5vw,2.2rem);
+    color:var(--dusty-rose);margin-bottom:1.5rem;
+  }
+  .hero-desc{
+    color:rgba(255,255,255,0.75);
+    font-size:1.05rem;line-height:1.7;
+    max-width:550px;margin:0 auto 2.5rem;
+  }
+  .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+  .btn-primary{
+    background:linear-gradient(135deg,var(--saffron),var(--terracotta));
+    color:#fff;padding:0.9rem 2.2rem;border-radius:35px;
+    text-decoration:none;font-weight:700;font-size:1rem;
+    box-shadow:0 8px 25px rgba(244,160,28,0.4);
+    transition:transform 0.3s,box-shadow 0.3s;
+    border:none;cursor:pointer;display:inline-block;
+  }
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(244,160,28,0.6);}
+  .btn-outline{
+    border:2px solid rgba(255,255,255,0.5);
+    color:#fff;padding:0.9rem 2.2rem;border-radius:35px;
+    text-decoration:none;font-weight:700;font-size:1rem;
+    transition:all 0.3s;display:inline-block;
+    background:rgba(255,255,255,0.05);
+  }
+  .btn-outline:hover{background:rgba(255,255,255,0.15);border-color:#fff;}
+  .hero-stats{
+    display:flex;gap:3rem;justify-content:center;margin-top:3rem;
+    flex-wrap:wrap;
+  }
+  .stat{text-align:center;}
+  .stat-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--saffron);font-weight:900;}
+  .stat-label{font-size:0.78rem;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.1em;}
+
+  /* ===== SECTION BASE ===== */
+  section{padding:5rem 2rem;}
+  .container{max-width:1200px;margin:0 auto;}
+  .section-badge{
+    display:inline-block;
+    background:linear-gradient(135deg,var(--saffron),var(--terracotta));
+    color:#fff;padding:0.3rem 1rem;border-radius:15px;
+    font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+    margin-bottom:1rem;
+  }
+  .section-title{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(2rem,4vw,3rem);
+    color:var(--deep-brown);margin-bottom:1rem;
+    line-height:1.2;
+  }
+  .section-sub{
+    color:#6B5744;font-size:1.05rem;line-height:1.7;
+    max-width:600px;margin:0 auto 3rem;
+  }
+  .text-center{text-align:center;}
+
+  /* ===== ABOUT ===== */
+  #about{background:var(--cream);}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+  .about-img-stack{position:relative;height:420px;}
+  .about-img-main{
+    width:80%;height:100%;
+    background:linear-gradient(135deg,var(--clay),var(--terracotta));
+    border-radius:20px;overflow:hidden;
+    box-shadow:0 20px 60px rgba(193,68,14,0.3);
+    position:relative;
+  }
+  .about-img-main img{width:100%;height:100%;object-fit:cover;}
+  .about-img-accent{
+    position:absolute;bottom:-20px;right:0;
+    width:50%;height:55%;
+    background:linear-gradient(135deg,var(--saffron),var(--dusty-rose));
+    border-radius:15px;
+    border:4px solid var(--warm-white);
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    overflow:hidden;
+  }
+  .about-img-accent img{width:100%;height:100%;object-fit:cover;}
+  .about-badge-float{
+    position:absolute;top:20px;right:10px;
+    background:var(--deep-brown);color:var(--saffron);
+    padding:0.8rem 1.2rem;border-radius:12px;
+    font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    text-align:center;
+  }
+  .about-text h2{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--deep-brown);margin-bottom:1.2rem;}
+  .about-text p{color:#5C4433;line-height:1.8;margin-bottom:1rem;font-size:1rem;}
+  .about-features{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;}
+  .feat-chip{
+    background:linear-gradient(135deg,rgba(244,160,28,0.15),rgba(232,98,58,0.15));
+    border:1px solid rgba(244,160,28,0.4);
+    padding:0.5rem 1rem;border-radius:20px;
+    font-size:0.85rem;font-weight:700;color:var(--clay);
+  }
+
+  /* ===== CERAMICS SHOP ===== */
+  #ceramics{background:var(--warm-white);}
+  .category-tabs{
+    display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;
+  }
+  .tab-btn{
+    background:transparent;border:2px solid var(--sand);
+    padding:0.6rem 1.5rem;border-radius:25px;cursor:pointer;
+    font-family:'Nunito',sans-serif;font-weight:700;font-size:0.9rem;
+    color:#6B5744;transition:all 0.3s;
+  }
+  .tab-btn.active,.tab-btn:hover{
+    background:linear-gradient(135deg,var(--clay),var(--terracotta));
+    border-color:var(--clay);color:#fff;
+    box-shadow:0 4px 15px rgba(193,68,14,0.3);
+  }
+  .products-grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2rem;
+  }
+  .product-card{
+    background:#fff;border-radius:20px;overflow:hidden;
+    box-shadow:0 4px 20px rgba(0,0,0,0.08);
+    transition:transform 0.3s,box-shadow 0.3s;
+    position:relative;
+  }
+  .product-card:hover{transform:translateY(-8px);box-shadow:0 15px 40px rgba(193,68,14,0.2);}
+  .product-img{
+    height:220px;overflow:hidden;position:relative;
+    background:linear-gradient(135deg,#f5e6d3,#e8c9a8);
+  }
+  .product-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s;}
+  .product-card:hover .product-img img{transform:scale(1.08);}
+  .product-badge{
+    position:absolute;top:12px;left:12px;
+    background:var(--saffron);color:var(--deep-brown);
+    padding:0.25rem 0.7rem;border-radius:10px;
+    font-size:0.72rem;font-weight:700;text-transform:uppercase;
+  }
+  .product-info{padding:1.2rem;}
+  .product-name{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--deep-brown);margin-bottom:0.3rem;}
+  .product-desc{font-size:0.82rem;color:#7A6055;line-height:1.5;margin-bottom:0.8rem;}
+  .product-footer{display:flex;align-items:center;justify-content:space-between;}
+  .product-price{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--clay);}
+  .product-price span{font-size:0.8rem;color:#9A8070;font-weight:400;font-family:'Nunito',sans-serif;}
+  .add-cart{
+    background:linear-gradient(135deg,var(--clay),var(--terracotta));
+    color:#fff;border:none;padding:0.5rem 1.1rem;
+    border-radius:20px;cursor:pointer;font-weight:700;
+    font-size:0.82rem;transition:all 0.3s;
+    font-family:'Nunito',sans-serif;
+  }
+  .add-cart:hover{transform:scale(1.05);box-shadow:0 4px 12px rgba(193,68,14,0.4);}
+  .category-section{display:none;}
+  .category-section.active{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2rem;}
+
+  /* ===== MENU / BEVERAGES ===== */
+  #menu{background:linear-gradient(135deg,#2C1A08 0%,#4A2C0A 100%);position:relative;overflow:hidden;}
+  #menu::before{
+    content:'';position:absolute;inset:0;
+    background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'%3E%3Ccircle cx='20' cy='20' r='15'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  #menu .section-title{color:var(--saffron);}
+  #menu .section-sub{color:rgba(255,255,255,0.65);}
+  #menu .section-badge{background:linear-gradient(135deg,var(--saffron),var(--gold));}
+  .menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;position:relative;z-index:2;}
+  .menu-card{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(244,160,28,0.2);
+    border-radius:18px;overflow:hidden;
+    transition:transform 0.3s,background 0.3s;
+    backdrop-filter:blur(10px);
+  }
+  .menu-card:hover{transform:translateY(-5px);background:rgba(255,255,255,0.1);}
+  .menu-card-img{height:180px;overflow:hidden;}
+  .menu-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s;}
+  .menu-card:hover .menu-card-img img{transform:scale(1.1);}
+  .menu-card-body{padding:1.2rem;}
+  .menu-cat{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--saffron);font-weight:700;margin-bottom:0.3rem;}
+  .menu-name{font-family:'Playfair Display',serif;font-size:1.1rem;color:#fff;margin-bottom:0.4rem;}
+  .menu-desc{font-size:0.8rem;color:rgba(255,255,255,0.6);line-height:1.5;margin-bottom:0.8rem;}
+  .menu-price-row{display:flex;align-items:center;justify-content:space-between;}
+  .menu-price{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--saffron);font-weight:700;}
+  .menu-tag{
+    background:rgba(244,160,28,0.15);
+    border:1px solid rgba(244,160,28,0.3);
+    color:var(--saffron);padding:0.2rem 0.6rem;
+    border-radius:10px;font-size:0.72rem;font-weight:700;
+  }
+
+  /* ===== 3D CONFIGURATOR ===== */
+  #configurator{background:var(--cream);}
+  .configurator-wrapper{
+    background:linear-gradient(135deg,#1a0f06,#2C1A08);
+    border-radius:25px;overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,0.4);
+    position:relative;
+  }
+  .configurator-header{
+    padding:2rem 2.5rem;
+    border-bottom:1px solid rgba(244,160,28,0.2);
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+  }
+  .configurator-header h3{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--saffron);}
+  .configurator-header p{color:rgba(255,255,255,0.5);font-size:0.85rem;}
+  .config-body{display:grid;grid-template-columns:1fr 340px;min-height:520px;}
+  .canvas-area{
+    display:flex;align-items:center;justify-content:center;
+    position:relative;background:linear-gradient(135deg,#0e0704,#1a0f06);
+    padding:2rem;
+  }
+  .canvas-3d{
+    width:100%;max-width:450px;aspect-ratio:1;
+    position:relative;
+  }
+  #potCanvas{width:100%!important;height:100%!important;border-radius:15px;}
+  .canvas-hint{
+    position:absolute;bottom:15px;left:50%;transform:translateX(-50%);
+    background:rgba(0,0,0,0.5);color:rgba(255,255,255,0.6);
+    padding:0.4rem 1rem;border-radius:10px;font-size:0.75rem;
+    white-space:nowrap;
+  }
+  .config-panel{
+    background:rgba(255,255,255,0.04);
+    border-left:1px solid rgba(244,160,28,0.15);
+    padding:2rem;overflow-y:auto;
+  }
+  .config-section{margin-bottom:1.8rem;}
+  .config-label{
+    font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;
+    color:rgba(255,255,255,0.5);font-weight:700;margin-bottom:0.8rem;
+    display:block;
+  }
+  .config-options{display:flex;gap:0.6rem;flex-wrap:wrap;}
+  .opt-btn{
+    background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);
+    color:rgba(255,255,255,0.7);padding:0.45rem 0.9rem;
+    border-radius:10px;cursor:pointer;font-size:0.82rem;
+    font-family:'Nunito',sans-serif;font-weight:600;
+    transition:all 0.25s;
+  }
+  .opt-btn.active,.opt-btn:hover{
+    background:linear-gradient(135deg,rgba(193,68,14,0.4),rgba(232,98,58,0.3));
+    border-color:var(--terracotta);color:#fff;
+  }
+  .color-swatches{display:flex;gap:0.6rem;flex-wrap:wrap;}
+  .swatch{
+    width:34px;height:34px;border-radius:50%;cursor:pointer;
+    border:3px solid transparent;transition:transform 0.2s,border-color 0.2s;
+  }
+  .swatch.active,.swatch:hover{transform:scale(1.2);border-color:#fff;}
+  .config-slider input{width:100%;accent-color:var(--terracotta);}
+  .config-slider{margin-top:0.5rem;}
+  .slider-labels{display:flex;justify-content:space-between;font-size:0.72rem;color:rgba(255,255,255,0.4);margin-top:0.4rem;}
+  .engraving-input{
+    width:100%;background:rgba(255,255,255,0.06);
+    border:1px solid rgba(244,160,28,0.2);
+    color:#fff;padding:0.7rem 1rem;border-radius:10px;
+    font-family:'Nunito',sans-serif;font-size:0.9rem;
+    outline:none;
+  }
+  .engraving-input:focus{border-color:var(--saffron);}
+  .engraving-input::placeholder{color:rgba(255,255,255,0.3);}
+  .config-total{
+    background:linear-gradient(135deg,rgba(244,160,28,0.1),rgba(193,68,14,0.1));
+    border:1px solid rgba(244,160,28,0.3);
+    border-radius:12px;padding:1rem;margin-bottom:1.2rem;
+    text-align:center;
+  }
+  .config-total-label{font-size:0.72rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.1em;}
+  .config-total-price{font-family:'Playfair Display',serif;font-size:2rem;color:var(--saffron);}
+  .config-order-btn{
+    width:100%;
+    background:linear-gradient(135deg,var(--clay),var(--terracotta));
+    color:#fff;border:none;padding:1rem;border-radius:12px;
+    font-family:'Nunito',sans-serif;font-weight:700;font-size:1rem;
+    cursor:pointer;transition:all 0.3s;
+    box-shadow:0 6px 20px rgba(193,68,14,0.4);
+  }
+  .config-order-btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(193,68,14,0.6);}
+
+  /* ===== RESERVATION ===== */
+  #reservation{background:linear-gradient(135deg,var(--teal) 0%,#0d5449 100%);position:relative;overflow:hidden;}
+  #reservation::before{
+    content:'';position:absolute;inset:0;
+    background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='25'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  #reservation .section-title{color:#fff;}
+  #reservation .section-sub{color:rgba(255,255,255,0.65);}
+  #reservation .section-badge{background:linear-gradient(135deg,#4CAF50,var(--teal));}
+  .reservation-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;position:relative;z-index:2;}
+  .reservation-info h3{font-family:'Playfair Display',serif;font-size:1.5rem;color:#fff;margin-bottom:1rem;}
+  .reservation-info p{color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:1.5rem;}
+  .res-rules{list-style:none;}
+  .res-rules li{
+    display:flex;align-items:flex-start;gap:0.7rem;
+    color:rgba(255,255,255,0.75);padding:0.7rem 0;
+    border-bottom:1px solid rgba(255,255,255,0.1);font-size:0.9rem;
+  }
+  .res-rules li .icon{font-size:1.2rem;flex-shrink:0;margin-top:0.05rem;}
+  .res-form{
+    background:rgba(255,255,255,0.1);backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:20px;padding:2.5rem;
+  }
+  .res-form h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;margin-bottom:1.5rem;}
+  .form-group{margin-bottom:1.2rem;}
+  .form-group label{
+    display:block;font-size:0.8rem;font-weight:700;
+    color:rgba(255,255,255,0.7);margin-bottom:0.4rem;
+    text-transform:uppercase;letter-spacing:0.08em;
+  }
+  .form-group input,.form-group select,.form-group textarea{
+    width:100%;padding:0.8rem 1rem;border-radius:10px;
+    background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);
+    color:#fff;font-family:'Nunito',sans-serif;font-size:0.95rem;
+    outline:none;transition:border-color 0.3s;
+    -webkit-appearance:none;
+  }
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+    border-color:var(--saffron);background:rgba(255,255,255,0.15);
+  }
+  .form-group select option{background:#2C2218;color:#fff;}
+  .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,0.35);}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+  .group-size-btns{display:flex;gap:0.6rem;flex-wrap:wrap;}
+  .gs-btn{
+    background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);
+    color:rgba(255,255,255,0.7);padding:0.5rem 1.1rem;
+    border-radius:10px;cursor:pointer;font-weight:700;
+    font-family:'Nunito',sans-serif;transition:all 0.25s;
+  }
+  .gs-btn.active,.gs-btn:hover{
+    background:linear-gradient(135deg,var(--saffron),var(--terracotta));
+    border-color:var(--saffron);color:#fff;
+  }
+  .book-btn{
+    width:100%;background:linear-gradient(135deg,var(--saffron),var(--gold));
+    color:var(--deep-brown);border:none;padding:1.1rem;
+    border-radius:12px;font-family:'Nunito',sans-serif;font-weight:700;
+    font-size:1.05rem;cursor:pointer;transition:all 0.3s;
+    box-shadow:0 6px 20px rgba(244,160,28,0.4);margin-top:0.5rem;
+  }
+  .book-btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(244,160,28,0.6);}
+  .book-note{
+    text-align:center;font-size:0.78rem;color:rgba(255,255,255,0.5);
+    margin-top:0.7rem;
+  }
+
+  /* ===== GALLERY ===== */
+  #gallery{background:var(--warm-white);}
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-auto-rows:200px;
+    gap:1rem;
+  }
+  .gallery-item{border-radius:15px;overflow:hidden;position:relative;cursor:pointer;}
+  .gallery-item:nth-child(1){grid-column:span 2;grid-row:span 2;}
+  .gallery-item:nth-child(4){grid-column:span 2;}
+  .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;}
+  .gallery-item:hover img{transform:scale(1.1);}
+  .gallery-item::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(to top,rgba(44,34,24,0.7),transparent);
+    opacity:0;transition:opacity 0.3s;
+  }
+  .gallery-item:hover::after{opacity:1;}
+
+  /* ===== LOCATION ===== */
+  #location{background:var(--cream);}
+  .location-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+  .location-info h3{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--deep-brown);margin-bottom:1rem;}
+  .location-details{list-style:none;margin-bottom:2rem;}
+  .location-details li{
+    display:flex;align-items:flex-start;gap:1rem;
+    padding:0.8rem 0;border-bottom:1px solid rgba(0,0,0,0.08);
+    font-size:0.95rem;color:#5C4433;
+  }
+  .loc-icon{
+    width:40px;height:40px;border-radius:10px;
+    background:linear-gradient(135deg,var(--clay),var(--terracotta));
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.1rem;flex-shrink:0;
+  }
+  .loc-text strong{display:block;color:var(--deep-brown);font-weight:700;margin-bottom:0.1rem;}
+  .map-embed{
+    border-radius:20px;overflow:hidden;
+    box-shadow:0 20px 60px rgba(0,0,0,0.15);
+    height:420px;
+  }
+  .map-embed iframe{width:100%;height:100%;border:none;}
+
+  /* ===== TESTIMONIALS ===== */
+  #testimonials{background:linear-gradient(135deg,#2C1A08,#4A2C0A);}
+  #testimonials .section-title{color:var(--saffron);}
+  #testimonials .section-sub{color:rgba(255,255,255,0.6);}
+  .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;}
+  .testimonial-card{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(244,160,28,0.15);
+    border-radius:18px;padding:1.8rem;
+    transition:transform 0.3s;
+  }
+  .testimonial-card:hover{transform:translateY(-5px);}
+  .t-stars{color:var(--saffron);font-size:1.1rem;margin-bottom:0.8rem;}
+  .t-text{color:rgba(255,255,255,0.75);font-size:0.9rem;line-height:1.7;margin-bottom:1.2rem;font-style:italic;}
+  .t-author{display:flex;align-items:center;gap:0.8rem;}
+  .t-avatar{
+    width:42px;height:42px;border-radius:50%;
+    background:linear-gradient(135deg,var(--clay),var(--saffron));
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:1rem;
+  }
+  .t-name{font-weight:700;color:#fff;font-size:0.9rem;}
+  .t-role{font-size:0.75rem;color:rgba(255,255,255,0.45);}
+
+  /* ===== FOOTER ===== */
+  footer{
+    background:var(--charcoal);
+    padding:4rem 2rem 2rem;
+    border-top:3px solid var(--saffron);
+  }
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;}
+  .footer-brand .logo{font-size:2rem;display:block;margin-bottom:0.8rem;}
+  .footer-brand p{color:rgba(255,255,255,0.5);font-size:0.88rem;line-height:1.7;}
+  .footer-socials{display:flex;gap:0.8rem;margin-top:1.2rem;}
+  .social-btn{
+    width:38px;height:38px;border-radius:50%;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    display:flex;align-items:center;justify-content:center;
+    color:rgba(255,255,255,0.6);text-decoration:none;font-size:1rem;
+    transition:all 0.3s;
+  }
+  .social-btn:hover{background:var(--saffron);color:var(--deep-brown);border-color:var(--saffron);}
+  .footer-col h4{color:var(--saffron);font-weight:700;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1.2rem;}
+  .footer-col ul{list-style:none;}
+  .footer-col ul li{margin-bottom:0.6rem;}
+  .footer-col ul a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.88rem;transition:color 0.3s;}
+  .footer-col ul a:hover{color:var(--saffron);}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.08);
+    padding-top:1.5rem;text-align:center;
+    color:rgba(255,255,255,0.35);font-size:0.82rem;
+  }
+  .footer-bottom span{color:var(--saffron);}
+
+  /* ===== NOTIFICATION TOAST ===== */
+  .toast{
+    position:fixed;bottom:2rem;right:2rem;z-index:9999;
+    background:linear-gradient(135deg,var(--forest),var(--olive));
+    color:#fff;padding:1rem 1.8rem;border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    transform:translateY(100px);opacity:0;
+    transition:all 0.4s;font-weight:700;
+    max-width:320px;text-align:center;
+  }
+  .toast.show{transform:translateY(0);opacity:1;}
+
+  /* ===== MODAL ===== */
+  .modal-overlay{
+    position:fixed;inset:0;z-index:2000;
+    background:rgba(0,0,0,0.8);backdrop-filter:blur(8px);
+    display:none;align-items:center;justify-content:center;padding:2rem;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal{
+    background:var(--warm-white);border-radius:20px;
+    max-width:480px;width:100%;padding:2.5rem;
+    position:relative;animation:modalIn 0.3s ease;
+  }
+  @keyframes modalIn{from{transform:scale(0.8);opacity:0;}to{transform:scale(1);opacity:1;}}
+  .modal-close{
+    position:absolute;top:1rem;right:1rem;
+    background:rgba(0,0,0,0.1);border:none;cursor:pointer;
+    width:34px;height:34px;border-radius:50%;font-size:1.2rem;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .modal h3{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--deep-brown);margin-bottom:0.5rem;}
+  .modal p{color:#6B5744;margin-bottom:1.5rem;font-size:0.9rem;line-height:1.6;}
+  .modal-actions{display:flex;gap:1rem;}
+  .modal-actions button{flex:1;padding:0.9rem;border-radius:12px;cursor:pointer;font-weight:700;font-family:'Nunito',sans-serif;font-size:0.95rem;}
+  .modal-confirm{background:linear-gradient(135deg,var(--clay),var(--terracotta));color:#fff;border:none;box-shadow:0 4px 15px rgba(193,68,14,0.3);}
+  .modal-cancel{background:transparent;border:2px solid var(--sand);color:var(--deep-brown);}
+
+  /* ===== SCROLL REVEAL ===== */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s,transform 0.7s;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  /* ===== RESPONSIVE ===== */
+  @media(max-width:900px){
+    .about-grid,.reservation-grid,.location-grid{grid-template-columns:1fr;}
+    .config-body{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px;}
+    .gallery-item:nth-child(1){grid-column:span 2;}
+    .gallery-item:nth-child(4){grid-column:span 1;}
+  }
+  @media(max-width:680px){
+    .nav-links{display:none;}
+    .hamburger{display:flex;}
+    .nav-links.open{
+      display:flex;flex-direction:column;
+      position:absolute;top:70px;left:0;right:0;
+      background:rgba(44,34,24,0.98);padding:1.5rem 2rem;
+      border-bottom:1px solid var(--saffron);gap:1rem;
+    }
+    .footer-grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:1fr;grid-auto-rows:220px;}
+    .gallery-item:nth-child(1){grid-column:span 1;grid-row:span 1;}
+    .about-img-stack{height:280px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ====== NAV ====== -->
+<nav id="mainNav">
+  <span class="logo">Vakdeti<span>Kade</span> ✦</span>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#ceramics">Shop</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#configurator">3D Studio</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#location">Visit Us</a></li>
+    <li><a href="#reservation" class="nav-cta">Book a Slot 🏺</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ====== HERO ====== -->
+<section id="hero">
+  <div class="hero-bg-art"></div>
+  <div class="floating-pots">
+    <div class="pot">🏺</div><div class="pot">🫖</div>
+    <div class="pot">🍵</div><div class="pot">🎨</div><div class="pot">🌿</div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">✦ Hadapsar, Pune's Finest Pottery Café ✦</div>
+    <h1 class="hero-title">
+      Vakdeti<span class="accent">Kade</span><br>Creations
+    </h1>
+    <p class="hero-subtitle">Where Clay Meets Coffee & Art Meets Soul</p>
+    <p class="hero-desc">
+      Step into a world where every mug tells a story, every plate holds memories. 
+      Handcrafted ceramics, artisan beverages, and a pottery experience like no other — 
+      all under one cozy roof in Hadapsar, Pune.
+    </p>
+    <div class="hero-btns">
+      <a href="#ceramics" class="btn-primary">🛒 Shop Ceramics</a>
+      <a href="#reservation" class="btn-outline">📅 Book a Table</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Pieces Crafted</div></div>
+      <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label">Customer Rating</div></div>
+      <div class="stat"><div class="stat-num">3+</div><div class="stat-label">Years of Art</div></div>
+      <div class="stat"><div class="stat-num">1000+</div><div class="stat-label">Happy Visitors</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== ABOUT ====== -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-stack reveal">
+        <div class="about-img-main">
+          <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&q=80" alt="Pottery cafe interior" loading="lazy">
+        </div>
+        <div class="about-img-accent">
+          <img src="https://images.unsplash.com/photo-1565347873243-1dd1e3b8e7c6?w=400&q=80" alt="Ceramic workshop" loading="lazy">
+        </div>
+        <div class="about-badge-float">EST.<br>2021</div>
+      </div>
+      <div class="about-text reveal">
+        <div class="section-badge">Our Story</div>
+        <h2>Born From Clay,<br>Fired With Passion</h2>
+        <p>VakdetiKade Creations began as a dream — to bring the ancient art of pottery into everyday life. Nestled in the vibrant heart of Hadapsar, Pune, we are more than just a café. We are a creative sanctuary where artists, families, and coffee lovers come together.</p>
+        <p>Every ceramic piece you see is hand-thrown on our studio wheels, glazed with love, and kiln-fired to perfection. Pair your purchase with our artisan brews and experience the full circle of creation.</p>
+        <p>Whether you're here to sip, shop, or create — VakdetiKade Creations is your place to slow down and savour the handmade.</p>
+        <div class="about-features">
+          <span class="feat-chip">🏺 Hand-Thrown Pottery</span>
+          <span class="feat-chip">☕ Artisan Brews</span>
+          <span class="feat-chip">🎨 3D Customization</span>
+          <span class="feat-chip">📦 Pan-India Shipping</span>
+          <span class="feat-chip">🌿 Eco-Friendly Glazes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CERAMICS SHOP ====== -->
+<section id="ceramics">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-badge">Handcrafted Shop</div>
+      <h2 class="section-title">Our Ceramic Collection</h2>
+      <p class="section-sub">Each piece is unique — born from the earth, shaped by hands, and glazed with soul. Browse our lovingly crafted collection.</p>
+    </div>
+    <div class="category-tabs reveal">
+      <button class="tab-btn active" onclick="showCategory('mugs')">☕ Mugs</button>
+      <button class="tab-btn" onclick="showCategory('plates')">🍽️ Plates</button>
+      <button class="tab-btn" onclick="showCategory('bowls')">🥣 Bowls</button>
+      <button class="tab-btn" onclick="showCategory('vases')">🌸 Vases & Décor</button>
+      <button class="tab-btn" onclick="showCategory('sets')">🫖 Tea Sets</button>
+    </div>
+
+    <!-- MUGS -->
+    <div id="cat-mugs" class="category-section active">
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500&q=80" alt="Terracotta Mug" loading="lazy">
+          <span class="product-badge">Bestseller</span>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Terracotta Sunrise Mug</div>
+          <div class="product-desc">Hand-thrown with warm earthy glaze. Perfect for your morning chai. 320ml capacity.</div>
+          <div class="product-footer">
+            <div class="product-price">₹450 <span>/ piece</span></div>
+            <button class="add-cart" onclick="addToCart('Terracotta Sunrise Mug','₹450')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&q=80" alt="Cobalt Blue Mug" loading="lazy">
+          <span class="product-badge">Trending</span>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Cobalt Serenity Mug</div>
+          <div class="product-desc">Deep cobalt blue glaze with hand-painted wave patterns. Dishwasher safe. 380ml.</div>
+          <div class="product-footer">
+            <div class="product-price">₹580 <span>/ piece</span></div>
+            <button class="add-cart" onclick="addToCart('Cobalt Serenity Mug','₹580')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1615735487485-e52b9af610c1?w=500&q=80" alt="Forest Green Mug" loading="lazy">
+        </div>
+        <div class="product-info">
+          <div class="product-name">Jungle Whisper Mug</div>
+          <div class="product-desc">Forest green celadon glaze with organic texture. Great for matcha or green teas. 300ml.</div>
+          <div class="product-footer">
+            <div class="product-price">₹520 <span>/ piece</span></div>
+            <button class="add-cart" onclick="addToCart('Jungle Whisper Mug','₹520')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&q=80" alt="Speckled Mug" loading="lazy">
+          <span class="product-badge">New</span>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Speckled Storm Mug</div>
+          <div class="product-desc">Salt-fired stoneware with beautiful speckle effect. Each piece uniquely different. 350ml.</div>
+          <div class="product-footer">
+            <div class="product-price">₹650 <span>/ piece</span></div>
+            <button class="add-cart" onclick="addToCart('Speckled Storm Mug','₹650')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLATES -->
+    <div id="cat-plates" class="category-section">
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=500&q=80" alt="Dinner Plate" loading="lazy">
+          <span class="product-badge">Bestseller</span>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Ivory Cloud Dinner Plate</div>
+          <div class="product-desc">Minimalist white glaze with subtle texture. 28cm diameter. Food safe & oven proof.</div>
+          <div class="product-footer">
+            <div class="product-price">₹780 <span>/ piece</span></div>
+            <button class="add-cart" onclick="addToCart('Ivory Cloud Dinner Plate','₹780')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1585503418537-88331351ad99?w=500&q=80" alt="Side Plate" loading="lazy">
+        </div>
+        <div class="product-info">
+          <div class="product-name">Terracotta Side Plate</div>
+          <div class="product-desc">Warm earthy tones with hand-drawn floral motif. 20cm diameter. Perfect for snacks.</div>
+          <div class="product-footer">
+            <div class="product-price">₹520 <span>/ piece</span></div>
+            <button class="add-cart" onclick="addToCart('Terracotta Side Plate','₹520')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500&q=80" alt="Serving Platter" loading="lazy">
+          <span class="product-badge">Premium</span>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Artisan Serving Platter</div>
+          <div class="product-desc">Large oval platter with reactive blue-green glaze. 35cm. Stunning centerpiece.</div>
+          <div class="product-footer">
+            <div class="product-price">₹1,200 <span>/ piece</span></div>
+            <button class="add-cart" onclick="addToCart('Artisan Serving Platter','₹1,200')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOWLS -->
+    <div id="cat-bowls" class="category-section">
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=500&q=80" alt="Soup Bowl" loading="lazy">
+          <span class="product-badge">Bestseller</span>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Forest Soup Bowl</div>
+          <div class="product-desc">Deep-welled bowl with matte green glaze. Holds 600ml. Microwave safe.</div>
+          <div class="product-footer">
+            <div class="product-price">₹620 <span>/ piece</span></div>
+            <button class="add-cart" onclick="addToCart('Forest Soup Bowl','₹620')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1603732551681-2e91159b9dc2?w=500&q=80" alt="Dessert Bowl" loading="lazy">
+        </div>
+        <div class="product-info">
+          <div class="product-name">Blush Dessert Bowl</div>
+          <div class="product-desc">Soft pink-blush glaze with ripple texture. Perfect for ice cream, fruit. 400ml.</div>
+          <div class="product-footer">
+            <div class="product-price">₹480 <span>/ piece</span></div>
+            <button class="add-cart" onclick="addToCart('Blush Dessert Bowl','₹480')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=500&q=80" alt="Salad Bowl" loading="lazy">
+          <span class="product-badge">New</span>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Midnight Salad Bowl</div>
+          <div class="product-desc">Large dark stoneware bowl with constellation pattern. 800ml. A dinner table star.</div>
+          <div class="product-footer">
+            <div class="product-price">₹950 <span>/ piece</span></div>
+            <button class="add-cart" onclick="addToCart('Midnight Salad Bowl','₹950')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VASES -->
+    <div id="cat-vases" class="category-section">
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&q=80" alt="Tall Vase" loading="lazy">
+          <span class="product-badge">Bestseller</span>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Amber Glow Tall Vase</div>
+          <div class="product-desc">Elegant 35cm tall vase with amber drip glaze. Statement piece for any room.</div>
+          <div class="product-footer">
+            <div class="product-price">₹1,450 <span>/ piece</span></div>
+            <button class="add-cart" onclick="addToCart('Amber Glow Tall Vase','₹1,450')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1606722590583-6951b5ea92ad?w=500&q=80" alt="Bud Vase" loading="lazy">
+        </div>
+        <div class="product-info">
+          <div class="product-name">Petal Bud Vase Set</div>
+          <div class="product-desc">Set of 3 petite bud vases in complementary glazes. Perfect for single-stem flowers.</div>
+          <div class="product-footer">
+            <div class="product-price">₹890 <span>/ set of 3</span></div>
+            <button class="add-cart" onclick="addToCart('Petal Bud Vase Set','₹890')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="Planter" loading="lazy">
+          <span class="product-badge">Trending</span>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Boho Plant Pot</div>
+          <div class="product-desc">Textured geometric pattern planter. 15cm. Drainage hole included. Perfect for succulents.</div>
+          <div class="product-footer">
+            <div class="product-price">₹680 <span>/ piece</span></div>
+            <button class="add-cart" onclick="addToCart('Boho Plant Pot','₹680')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEA SETS -->
+    <div id="cat-sets" class="category-section">
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500&q=80" alt="Tea Set" loading="lazy">
+          <span class="product-badge">Premium</span>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Imperial Chai Set</div>
+          <div class="product-desc">Teapot + 4 cups in matching glaze. Holds 900ml. Gift-boxed. Includes stainer.</div>
+          <div class="product-footer">
+            <div class="product-price">₹2,800 <span>/ set</span></div>
+            <button class="add-cart" onclick="addToCart('Imperial Chai Set','₹2,800')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1563911892437-1feda0179786?w=500&q=80" alt="Coffee Set" loading="lazy">
+        </div>
+        <div class="product-info">
+          <div class="product-name">Espresso Lover's Duo</div>
+          <div class="product-desc">2 espresso cups with saucers. Tiny but mighty. Thick walls for heat retention. 80ml each.</div>
+          <div class="product-footer">
+            <div class="product-price">₹980 <span>/ set of 2</span></div>
+            <button class="add-cart" onclick="addToCart('Espresso Lover\'s Duo','₹980')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&q=80" alt="Dinner Set" loading="lazy">
+          <span class="product-badge">New</span>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Family Pottery Dinner Set</div>
+          <div class="product-desc">6 plates + 6 bowls + 6 mugs in coordinating terracotta family. Serves a whole family.</div>
+          <div class="product-footer">
+            <div class="product-price">₹7,500 <span>/ set</span></div>
+            <button class="add-cart" onclick="addToCart('Family Pottery Dinner Set','₹7,500')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====== MENU ====== -->
+<section id="menu">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-badge">☕ Café Menu</div>
+      <h2 class="section-title">Artisan Sips & Bites</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.65)">Every sip served in our own handcrafted ceramics. Taste the art.</p>
+    </div>
+    <div class="menu-grid reveal">
+
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&q=80" alt="Espresso" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-cat">Hot Coffees</div>
+          <div class="menu-name">Classic Espresso</div>
+          <div class="menu-desc">Intense single-origin shot, served in our signature clay espresso cup.</div>
+          <div class="menu-price-row">
+            <div class="menu-price">₹80</div>
+            <span class="menu-tag">Hot</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1529892485617-25f63cd7b1e9?w=500&q=80" alt="Cappuccino" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-cat">Hot Coffees</div>
+          <div class="menu-name">Kiln Cappuccino</div>
+          <div class="menu-desc">Velvety microfoam atop double espresso, served in our terracotta mug.</div>
+          <div class="menu-price-row">
+            <div class="menu-price">₹140</div>
+            <span class="menu-tag">Hot</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&q=80" alt="Latte" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-cat">Hot Coffees</div>
+          <div class="menu-name">Potter's Café Latte</div>
+          <div class="menu-desc">Silky steamed oat milk with latte art, poured into a handcrafted cobalt mug.</div>
+          <div class="menu-price-row">
+            <div class="menu-price">₹160</div>
+            <span class="menu-tag">Hot</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1571658735651-7f4c07f19f85?w=500&q=80" alt="Cold Coffee" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-cat">Cold Coffees</div>
+          <div class="menu-name">Clay-Chilled Cold Brew</div>
+          <div class="menu-desc">18-hour steeped cold brew over ice, naturally sweet and smooth.</div>
+          <div class="menu-price-row">
+            <div class="menu-price">₹180</div>
+            <span class="menu-tag">Cold</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=500&q=80" alt="Matcha" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-cat">Speciality Teas</div>
+          <div class="menu-name">Zen Matcha Latte</div>
+          <div class="menu-desc">Ceremonial-grade matcha whisked with warm oat milk. Served in our forest bowl-cup.</div>
+          <div class="menu-price-row">
+            <div class="menu-price">₹200</div>
+            <span class="menu-tag">Hot / Iced</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=500&q=80" alt="Chai" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-cat">Speciality Teas</div>
+          <div class="menu-name">VakdetiKade Special Masala Chai</div>
+          <div class="menu-desc">House-blend spiced chai simmered with ginger, cardamom and cloves. Served in clay kulhad.</div>
+          <div class="menu-price-row">
+            <div class="menu-price">₹90</div>
+            <span class="menu-tag">🌶 Spiced</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=500&q=80" alt="Smoothie" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-cat">Cold Beverages</div>
+          <div class="menu-name">Berry Bliss Smoothie</div>
+          <div class="menu-desc">Mixed berries, banana and yoghurt blended fresh. Served in our wide-mouth ceramic bowl.</div>
+          <div class="menu-price-row">
+            <div class="menu-price">₹220</div>
+            <span class="menu-tag">Cold</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500&q=80" alt="Brownie" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-cat">Bites & Snacks</div>
+          <div class="menu-name">Kiln-Warm Brownie</div>
+          <div class="menu-desc">Fudgy dark chocolate brownie served warm with vanilla ice cream on our ceramic plate.</div>
+          <div class="menu-price-row">
+            <div class="menu-price">₹180</div>
+            <span class="menu-tag">Sweet</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=500&q=80" alt="Toast" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-cat">Bites & Snacks</div>
+          <div class="menu-name">Potter's Avocado Toast</div>
+          <div class="menu-desc">Multigrain sourdough with smashed avo, chilli flakes and microgreens on artisan plate.</div>
+          <div class="menu-price-row">
+            <div class="menu-price">₹240</div>
+            <span class="menu-tag">Savoury</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====== 3D CONFIGURATOR ====== -->
+<section id="configurator">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-badge">🎨 3D Studio</div>
+      <h2 class="section-title">Design Your Perfect Piece</h2>
+      <p class="section-sub">Customize your ceramic creation in 3D. Choose shape, color, size and add your personal touch — then we'll fire it just for you!</p>
+    </div>
+    <div class="configurator-wrapper reveal">
+      <div class="configurator-header">
+        <div>
+          <h3>🏺 3D Pottery Configurator</h3>
+          <p>Drag to rotate • Scroll to zoom • Customize below</p>
+        </div>
+        <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+          <span style="background:rgba(244,160,28,0.15);border:1px solid rgba(244,160,28,0.3);padding:0.4rem 0.9rem;border-radius:10px;color:var(--saffron);font-size:0.78rem;font-weight:700;">✦ Powered by WebGL</span>
+          <span style="background:rgba(76,175,80,0.15);border:1px solid rgba(76,175,80,0.3);padding:0.4rem 0.9rem;border-radius:10px;color:#81C784;font-size:0.78rem;font-weight:700;">🚚 Ships in 7–10 days</span>
+        </div>
+      </div>
+      <div class="config-body">
+        <div class="canvas-area">
+          <div class="canvas-3d">
+            <canvas id="potCanvas"></canvas>
+          </div>
+          <div class="canvas-hint">🖱️ Drag to rotate • Scroll to zoom</div>
+        </div>
+        <div class="config-panel">
+
+          <div class="config-section">
+            <span class="config-label">Shape / Product Type</span>
+            <div class="config-options">
+              <button class="opt-btn active" onclick="setShape('mug',this)">☕ Mug</button>
+              <button class="opt-btn" onclick="setShape('bowl',this)">🥣 Bowl</button>
+              <button class="opt-btn" onclick="setShape('vase',this)">🌸 Vase</button>
+              <button class="opt-btn" onclick="setShape('plate',this)">🍽️ Plate</button>
+            </div>
+          </div>
+
+          <div class="config-section">
+            <span class="config-label">Glaze Color</span>
+            <div class="color-swatches">
+              <div class="swatch active" style="background:#C1440E" onclick="setColor('#C1440E',this)" title="Terracotta"></div>
+              <div class="swatch" style="background:#1A4A8A" onclick="setColor('#1A4A8A',this)" title="Cobalt"></div>
+              <div class="swatch" style="background:#2D6A4F" onclick="setColor('#2D6A4F',this)" title="Forest"></div>
+              <div class="swatch" style="background:#F4A01C" onclick="setColor('#F4A01C',this)" title="Saffron"></div>
+              <div class="swatch" style="background:#D4B896" onclick="setColor('#D4B896',this)" title="Sand"></div>
+              <div class="swatch" style="background:#8B1A4A" onclick="setColor('#8B1A4A',this)" title="Burgundy"></div>
+              <div class="swatch" style="background:#2C2218" onclick="setColor('#2C2218',this)" title="Charcoal"></div>
+              <div class="swatch" style="background:#E8D5C4" onclick="setColor('#E8D5C4',this)" title="Ivory"></div>
+            </div>
+          </div>
+
+          <div class="config-section">
+            <span class="config-label">Finish</span>
+            <div class="config-options">
+              <button class="opt-btn active" onclick="setFinish('Glossy',this)">✨ Glossy</button>
+              <button class="opt-btn" onclick="setFinish('Matte',this)">🪨 Matte</button>
+              <button class="opt-btn" onclick="setFinish('Reactive',this)">🌊 Reactive</button>
+            </div>
+          </div>
+
+          <div class="config-section">
+            <span class="config-label">Size</span>
+            <div class="config-options">
+              <button class="opt-btn" onclick="setSize('Small',this)">S</button>
+              <button class="opt-btn active" onclick="setSize('Medium',this)">M</button>
+              <button class="opt-btn" onclick="setSize('Large',this)">L</button>
+              <button class="opt-btn" onclick="setSize('XL',this)">XL</button>
+            </div>
+          </div>
+
+          <div class="config-section">
+            <span class="config-label">Pattern / Texture</span>
+            <div class="config-options">
+              <button class="opt-btn active" onclick="setPattern('Plain',this)">Plain</button>
+              <button class="opt-btn" onclick="setPattern('Ripple',this)">Ripple</button>
+              <button class="opt-btn" onclick="setPattern('Carved',this)">Carved</button>
+              <button class="opt-btn" onclick="setPattern('Speckled',this)">Speckled</button>
+            </div>
+          </div>
+
+          <div class="config-section">
+            <span class="config-label">Personal Engraving (optional)</span>
+            <input class="engraving-input" type="text" id="engravingInput" maxlength="30" placeholder="e.g. 'Priya's Cup ❤️'" oninput="updateEngraving()">
+          </div>
+
+          <div class="config-total">
+            <div class="config-total-label">Your Custom Price</div>
+            <div class="config-total-price" id="configPrice">₹580</div>
+          </div>
+
+          <button class="config-order-btn" onclick="placeCustomOrder()">
+            🛒 Order This Custom Piece
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== RESERVATION ====== -->
+<section id="reservation">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-badge">📅 Book a Slot</div>
+      <h2 class="section-title">Reserve Your Table</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.65)">Come as a group, leave as a family. Book your pottery café experience at least 24 hours in advance.</p>
+    </div>
+    <div class="reservation-grid">
+      <div class="reservation-info reveal">
+        <h3>✨ Your Perfect Pottery Day</h3>
+        <p>Whether you're celebrating a birthday, hosting a corporate offsite, or just looking for a unique date experience — VakdetiKade Creations has a spot for you.</p>
+        <ul class="res-rules">
+          <li><span class="icon">👥</span><span>Groups of <strong>2 to 5+ people</strong> welcome. Private events for larger groups available on request.</span></li>
+          <li><span class="icon">⏰</span><span>Reservations must be made <strong>at least 24 hours in advance</strong>. Walk-ins welcome subject to availability.</span></li>
+          <li><span class="icon">🕐</span><span>Café open: <strong>Tue–Sun, 10:00 AM – 9:00 PM</strong>. Closed Mondays.</span></li>
+          <li><span class="icon">🏺</span><span>Each session includes guided pottery wheel time + beverages of your choice.</span></li>
+          <li><span class="icon">📸</span><span>Bring your camera! Our warm interiors make for the most beautiful memories.</span></li>
+          <li><span class="icon">📞</span><span>Call us: <strong>+91 98765 43210</strong> for group bookings & special requests.</span></li>
+        </ul>
+      </div>
+      <div class="res-form reveal">
+        <h3>🗓️ Book Your Slot</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" id="resName" placeholder="Priya">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" id="resLname" placeholder="Sharma">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="resEmail" placeholder="priya@example.com">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="resPhone" placeholder="+91 98765 43210">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Preferred Date</label>
+            <input type="date" id="resDate">
+          </div>
+          <div class="form-group">
+            <label>Preferred Time</label>
+            <select id="resTime">
+              <option value="">Select time</option>
+              <option>10:00 AM – 12:00 PM</option>
+              <option>12:00 PM – 2:00 PM</option>
+              <option>2:00 PM – 4:00 PM</option>
+              <option>4:00 PM – 6:00 PM</option>
+              <option>6:00 PM – 8:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Group Size</label>
+          <div class="group-size-btns" id="groupSizeBtns">
+            <button class="gs-btn" onclick="selectGroup(2,this)">2</button>
+            <button class="gs-btn" onclick="selectGroup(3,this)">3</button>
+            <button class="gs-btn" onclick="selectGroup(4,this)">4</button>
+            <button class="gs-btn" onclick="selectGroup(5,this)">5</button>
+            <button class="gs-btn" onclick="selectGroup('5+',this)">5+</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Occasion (optional)</label>
+          <select id="resOccasion">
+            <option value="">General Visit</option>
+            <option>Birthday Celebration</option>
+            <option>Date / Anniversary</option>
+            <option>Corporate Team Outing</option>
+            <option>Girls / Boys Day Out</option>
+            <option>Family Gathering</option>
+            <option>Photography / Content</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Special Requests</label>
+          <textarea id="resNotes" rows="2" placeholder="Dietary needs, special decorations, etc."></textarea>
+        </div>
+        <button class="book-btn" onclick="submitReservation()">✨ Confirm My Booking</button>
+        <p class="book-note">⏱️ Reservations open 24+ hrs in advance. You'll receive a WhatsApp confirmation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== GALLERY ====== -->
+<section id="gallery">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-badge">📸 Gallery</div>
+      <h2 class="section-title">Moments Fired in Clay</h2>
+      <p class="section-sub">Glimpses of joy, creativity, and community from inside VakdetiKade Creations.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=700&q=80" alt="Pottery cafe" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&q=80" alt="Tea set" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&q=80" alt="Ceramic mugs" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=700&q=80" alt="Ceramic vases" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80" alt="Coffee" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&q=80" alt="Matcha" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== TESTIMONIALS ====== -->
+<section id="testimonials">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-badge">💬 Reviews</div>
+      <h2 class="section-title">Voices of Our Community</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.6)">From first-time visitors to regulars — here's what people say about VakdetiKade.</p>
+    </div>
+    <div class="testimonials-grid reveal">
+      <div class="testimonial-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"Absolutely magical experience! We came as a group of 4 and spent 3 hours painting ceramics and sipping the most amazing masala chai. The staff are warm and the ambiance is beyond anything I expected in Pune!"</p>
+        <div class="t-author">
+          <div class="t-avatar">P</div>
+          <div><div class="t-name">Priya Desai</div><div class="t-role">Pune · Regular Visitor</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"I ordered a custom mug with my daughter's name engraved. The quality is insane — it looks like it belongs in a boutique in Bali! VakdetiKade has raised the bar for handcrafted ceramics in India."</p>
+        <div class="t-author">
+          <div class="t-avatar">R</div>
+          <div><div class="t-name">Rajesh Kulkarni</div><div class="t-role">Hadapsar · Online Customer</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"Took my team here for a team outing. Pottery wheel session + cold brew = perfect afternoon. Everyone left with their own piece and huge smiles. Best corporate outing in Pune, hands down!"</p>
+        <div class="t-author">
+          <div class="t-avatar">A</div>
+          <div><div class="t-name">Ananya Joshi</div><div class="t-role">Koregaon Park · Team Lead</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"The 3D customization tool on the website is so fun! I designed my own bowl, got it delivered to my house — perfect. The glaze color matched exactly what I saw on screen. Absolutely brilliant!"</p>
+        <div class="t-author">
+          <div class="t-avatar">S</div>
+          <div><div class="t-name">Shreya Mehta</div><div class="t-role">Mumbai · Online Customer</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== LOCATION ====== -->
+<section id="location">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-badge">📍 Find Us</div>
+      <h2 class="section-title">Visit VakdetiKade Creations</h2>
+      <p class="section-sub">Come say hello, smell the clay, taste the chai. We're right in the heart of Hadapsar, Pune.</p>
+    </div>
+    <div class="location-grid">
+      <div class="reveal">
+        <ul class="location-details">
+          <li>
+            <div class="loc-icon">📍</div>
+            <div class="loc-text">
+              <strong>Address</strong>
+              VakdetiKade Creations, Near Hadapsar Bus Stand,<br>Magarpatta Road, Hadapsar,<br>Pune – 411028, Maharashtra
+            </div>
+          </li>
+          <li>
+            <div class="loc-icon">🕐</div>
+            <div class="loc-text">
+              <strong>Opening Hours</strong>
+              Tuesday – Sunday: 10:00 AM – 9:00 PM<br>Monday: Closed (Kiln Day 🏺)
+            </div>
+          </li>
+          <li>
+            <div class="loc-icon">📞</div>
+            <div class="loc-text">
+              <strong>Contact</strong>
+              +91 98765 43210<br>hello@vakdetikade.in
+            </div>
+          </li>
+          <li>
+            <div class="loc-icon">🚌</div>
+            <div class="loc-text">
+              <strong>Getting Here</strong>
+              5 min walk from Hadapsar Bus Stand.<br>Auto-rickshaw friendly. Parking available nearby.
+            </div>
+          </li>
+          <li>
+            <div class="loc-icon">📦</div>
+            <div class="loc-text">
+              <strong>Online Orders</strong>
+              Pan-India shipping via Blue Dart.<br>7–10 business days delivery.
+            </div>
+          </li>
+        </ul>
+        <a href="#reservation" class="btn-primary" style="display:inline-block;">📅 Book a Visit</a>
+      </div>
+      <div class="map-embed reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.3254782082177!2d73.9396!3d18.5089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3e62a00e3a5%3A0x6ffb37d5ff1db8f2!2sHadapsar%2C%20Pune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="VakdetiKade Creations Location">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo">Vakdeti<span>Kade</span> ✦</span>
+        <p>A pottery café where art meets everyday life. Handcrafted with love in Hadapsar, Pune. Every cup tells a story.</p>
+        <div class="footer-socials">
+          <a class="social-btn" href="#" aria-label="Instagram">📸</a>
+          <a class="social-btn" href="#" aria-label="Facebook">📘</a>
+          <a class="social-btn" href="#" aria-label="WhatsApp">💬</a>
+          <a class="social-btn" href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#ceramics">Shop Ceramics</a></li>
+          <li><a href="#menu">Café Menu</a></li>
+          <li><a href="#configurator">3D Studio</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reservation">Book a Slot</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ceramics</h4>
+        <ul>
+          <li><a href="#ceramics">Mugs & Cups</a></li>
+          <li><a href="#ceramics">Dinner Plates</a></li>
+          <li><a href="#ceramics">Bowls</a></li>
+          <li><a href="#ceramics">Vases</a></li>
+          <li><a href="#ceramics">Tea Sets</a></li>
+          <li><a href="#ceramics">Gift Bundles</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Policies</h4>
+        <ul>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Returns & Refunds</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Reservation Policy</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 <span>VakdetiKade Creations</span> · Hadapsar, Pune · Made with 🏺 & ☕ · All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ====== TOAST ====== -->
+<div class="toast" id="toast"></div>
+
+<!-- ====== MODAL ====== -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h3 id="modalTitle">Order Placed!</h3>
+    <p id="modalText">Your custom piece is being crafted with love. You'll receive a confirmation shortly.</p>
+    <div class="modal-actions">
+      <button class="modal-confirm" onclick="closeModal()">Wonderful! 🏺</button>
+      <button class="modal-cancel" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- ====== THREE.JS 3D CANVAS ====== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// ============ 3D CONFIGURATOR ============
+let scene, camera, renderer, pot, animFrame;
+let isDragging = false, prevMouse = {x:0,y:0};
+let currentColor = '#C1440E';
+let currentShape = 'mug';
+let currentFinish = 'Glossy';
+let currentSize = 'Medium';
+let currentPattern = 'Plain';
+let currentEngraving = '';
+
+const priceMap = {mug:{Small:380,Medium:520,Large:680,XL:850}, bowl:{Small:420,Medium:580,Large:780,XL:980}, vase:{Small:650,Medium:950,Large:1300,XL:1600}, plate:{Small:450,Medium:650,Large:850,XL:1100}};
+const finishAdd = {Glossy:0,Matte:50,Reactive:120};
+
+function initThree(){
+  const canvas = document.getElementById('potCanvas');
+  const w = canvas.parentElement.clientWidth;
+  const h = w;
+  renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+  renderer.setSize(w,h);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.shadowMap.enabled = true;
+  scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(45,1,0.1,100);
+  camera.position.set(0,1.5,4);
+  camera.lookAt(0,0,0);
+  const ambient = new THREE.AmbientLight(0xffffff,0.6);
+  scene.add(ambient);
+  const key = new THREE.DirectionalLight(0xfff5e0,1.2);
+  key.position.set(5,8,5);
+  key.castShadow = true;
+  scene.add(key);
+  const fill = new THREE.DirectionalLight(0xe0f0ff,0.4);
+  fill.position.set(-5,3,-5);
+  scene.add(fill);
+  buildPot();
+  animate();
+  addCanvasInteraction(canvas);
+}
+
+function buildPot(){
+  if(pot){scene.remove(pot);pot.traverse(c=>{if(c.geometry)c.geometry.dispose();if(c.material)c.material.dispose();});}
+  pot = new THREE.Group();
+  const mat = new THREE.MeshStandardMaterial({
+    color: new THREE.Color(currentColor),
+    roughness: currentFinish==='Matte'?0.9:currentFinish==='Reactive'?0.5:0.15,
+    metalness: currentFinish==='Glossy'?0.05:0
+  });
+
+  let geo;
+  if(currentShape==='mug'){
+    geo = new THREE.CylinderGeometry(0.55,0.45,1.2,32);
+    const body = new THREE.Mesh(geo,mat);
+    body.position.y = 0.6;
+    pot.add(body);
+    const rim = new THREE.TorusGeometry(0.55,0.05,12,32);
+    const rimM = new THREE.Mesh(rim,mat);
+    rimM.position.y = 1.2;
+    rimM.rotation.x = Math.PI/2;
+    pot.add(rimM);
+    const base = new THREE.CylinderGeometry(0.45,0.45,0.08,32);
+    const baseM = new THREE.Mesh(base,mat);
+    pot.add(baseM);
+    // Handle
+    const curve = new THREE.QuadraticBezierCurve3(
+      new THREE.Vector3(0.55,1.0,0),
+      new THREE.Vector3(1.1,0.8,0),
+      new THREE.Vector3(0.55,0.4,0)
+    );
+    const pts = curve.getPoints(20);
+    const handleGeo = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts),20,0.08,8,false);
+    pot.add(new THREE.Mesh(handleGeo,mat));
+  } else if(currentShape==='bowl'){
+    const pts = [];
+    for(let i=0;i<=16;i++){const a=i/16*(Math.PI/2);pts.push(new THREE.Vector2(Math.sin(a)*0.9,Math.cos(a)*0.5-0.5));}
+    geo = new THREE.LatheGeometry(pts,32);
+    const body = new THREE.Mesh(geo,mat);
+    pot.add(body);
+  } else if(currentShape==='vase'){
+    const pts = [
+      new THREE.Vector2(0.15,0),new THREE.Vector2(0.4,0.3),new THREE.Vector2(0.6,0.7),
+      new THREE.Vector2(0.5,1.2),new THREE.Vector2(0.6,1.6),new THREE.Vector2(0.3,1.9),
+      new THREE.Vector2(0.2,2.0)
+    ];
+    geo = new THREE.LatheGeometry(pts,32);
+    pot.add(new THREE.Mesh(geo,mat));
+  } else if(currentShape==='plate'){
+    const pts = [];
+    for(let i=0;i<=12;i++){const t=i/12;pts.push(new THREE.Vector2(t*1.1,t<0.8?-0.05:t*0.35-0.3));}
+    geo = new THREE.LatheGeometry(pts,48);
+    const body = new THREE.Mesh(geo,mat);
+    pot.add(body);
+    const base2 = new THREE.CylinderGeometry(0.2,0.2,0.05,24);
+    const bm = new THREE.Mesh(base2,mat);
+    bm.position.y = -0.05;
+    pot.add(bm);
+  }
+
+  // Speckle pattern approximation
+  if(currentPattern==='Speckled'){
+    for(let i=0;i<30;i++){
+      const sg = new THREE.SphereGeometry(0.025,6,6);
+      const sm = new THREE.MeshStandardMaterial({color:0x000000,roughness:0.9});
+      const sp = new THREE.Mesh(sg,sm);
+      sp.position.set((Math.random()-0.5)*1.2,(Math.random()*1.5),(Math.random()-0.5)*1.2);
+      pot.add(sp);
+    }
+  }
+
+  scene.add(pot);
+  updatePrice();
+}
+
+function animate(){
+  animFrame = requestAnimationFrame(animate);
+  if(!isDragging) pot.rotation.y += 0.006;
+  renderer.render(scene,camera);
+}
+
+function addCanvasInteraction(canvas){
+  canvas.addEventListener('mousedown',(e)=>{isDragging=true;prevMouse={x:e.clientX,y:e.clientY};});
+  document.addEventListener('mouseup',()=>isDragging=false);
+  document.addEventListener('mousemove',(e)=>{
+    if(!isDragging)return;
+    const dx=e.clientX-prevMouse.x, dy=e.clientY-prevMouse.y;
+    pot.rotation.y+=dx*0.01;
+    pot.rotation.x+=dy*0.01;
+    prevMouse={x:e.clientX,y:e.clientY};
+  });
+  canvas.addEventListener('wheel',(e)=>{camera.position.z=Math.max(2,Math.min(8,camera.position.z+e.deltaY*0.005));});
+  // Touch
+  let lt=null;
+  canvas.addEventListener('touchstart',(e)=>{isDragging=true;lt={x:e.touches[0].clientX,y:e.touches[0].clientY};});
+  canvas.addEventListener('touchend',()=>isDragging=false);
+  canvas.addEventListener('touchmove',(e)=>{
+    if(!isDragging||!lt)return;
+    const dx=e.touches[0].clientX-lt.x, dy=e.touches[0].clientY-lt.y;
+    pot.rotation.y+=dx*0.01;pot.rotation.x+=dy*0.01;
+    lt={x:e.touches[0].clientX,y:e.touches[0].clientY};
+  });
+}
+
+function setShape(shape,btn){
+  currentShape=shape;
+  document.querySelectorAll('#configurator .config-options:first-of-type .opt-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  buildPot();
+}
+function setColor(color,el){
+  currentColor=color;
+  document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));
+  el.classList.add('active');
+  buildPot();
+}
+function setFinish(finish,btn){
+  currentFinish=finish;
+  btn.closest('.config-options').querySelectorAll('.opt-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  buildPot();
+}
+function setSize(size,btn){
+  currentSize=size;
+  btn.closest('.config-options').querySelectorAll('.opt-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  updatePrice();
+}
+function setPattern(pattern,btn){
+  currentPattern=pattern;
+  btn.closest('.config-options').querySelectorAll('.opt-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  buildPot();
+}
+function updateEngraving(){currentEngraving=document.getElementById('engravingInput').value;updatePrice();}
+function updatePrice(){
+  const base = priceMap[currentShape][currentSize]||500;
+  const fAdd = finishAdd[currentFinish]||0;
+  const eAdd = currentEngraving.length>0?100:0;
+  document.getElementById('configPrice').textContent='₹'+(base+fAdd+eAdd);
+}
+function placeCustomOrder(){
+  openModal(`🏺 Custom Order Placed!`,`Your ${currentSize} ${currentShape} in ${currentFinish} finish has been queued for crafting! We'll fire it, glaze it, and ship it to you in 7–10 days. Expect a WhatsApp confirmation soon!`);
+}
+
+window.addEventListener('load',()=>{
+  setTimeout(initThree,500);
+});
+
+// ============ CATEGORY TABS ============
+function showCategory(cat){
+  document.querySelectorAll('.category-section').forEach(s=>s.classList.remove('active'));
+  document.getElementById('cat-'+cat).classList.add('active');
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+// ============ CART ============
+let cart=[];
+function addToCart(name,price){
+  cart.push({name,price});
+  showToast(`🛒 ${name} added to cart!`);
+}
+
+// ============ RESERVATION ============
+let selectedGroup = null;
+function selectGroup(n,btn){
+  selectedGroup=n;
+  document.querySelectorAll('.gs-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+function submitReservation(){
+  const name=document.getElementById('resName').value.trim();
+  const email=document.getElementById('resEmail').value.trim();
+  const date=document.getElementById('resDate').value;
+  const time=document.getElementById('resTime').value;
+  if(!name||!email||!date||!time||!selectedGroup){
+    showToast('⚠️ Please fill all required fields & select group size!');return;
+  }
+  // 24hr check
+  const chosen=new Date(date);
+  const now=new Date();
+  const diff=(chosen-now)/(1000*60*60);
+  if(diff<24&&diff>=0){
+    showToast('⏰ Please book at least 24 hours in advance!');return;
+  }
+  openModal('🎉 Booking Confirmed!',`Thank you, ${name}! Your table for ${selectedGroup} is reserved on ${date} at ${time}. A WhatsApp confirmation will be sent to your phone. We can't wait to see you at VakdetiKade Creations! 🏺☕`);
+  // Reset
+  document.getElementById('resName').value='';
+  document.getElementById('resEmail').value='';
+  document.getElementById('resDate').value='';
+  document.getElementById('resTime').value='';
+  document.getElementById('resNotes').value='';
+  document.querySelectorAll('.gs-btn').forEach(b=>b.classList.remove('active'));
+  selectedGroup=null;
+}
+
+// ============ TOAST ============
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3500);
+}
+
+// ============ MODAL ============
+function openModal(title,text){
+  document.getElementById('modalTitle').textContent=title;
+  document.getElementById('modalText').textContent=text;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+function closeModal(){document.getElementById('modalOverlay').classList.remove('open');}
+
+// ============ NAV ============
+function toggleNav(){
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+// ============ SCROLL REVEAL ============
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});
+},{threshold:0.1});
+reveals.forEach(r=>observer.observe(r));
+
+// ============ NAV SCROLL EFFECT ============
+window.addEventListener('scroll',()=>{
+  const nav=document.getElementById('mainNav');
+  if(window.scrollY>80){nav.style.boxShadow='0 4px 30px rgba(0,0,0,0.5)';}
+  else{nav.style.boxShadow='none';}
+});
+
+// Set min date for reservation (today)
+window.addEventListener('load',()=>{
+  const d=new Date();
+  d.setDate(d.getDate()+1);
+  const str=d.toISOString().split('T')[0];
+  document.getElementById('resDate').setAttribute('min',str);
+});
+</script>
+</body>
+</html>
